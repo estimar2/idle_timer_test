@@ -28,7 +28,15 @@ const IdleTimerContainer = () => {
     <>
       {isLoggedIn ? <h2> Hello </h2> : <h2> You are logged out</h2>}
 
-      <Modal title="modal" visible={modalIsOpen}>
+      <Modal
+        title="modal"
+        visible={modalIsOpen}
+        footer={[]}
+        closable={true}
+        onCancel={() => {
+          setModalIsOpen(false);
+        }}
+      >
         <h2> You have been Idle for a while</h2>
         <p>You'll be logged out soon</p>
         <button onClick={logOut}>Log me out</button>
